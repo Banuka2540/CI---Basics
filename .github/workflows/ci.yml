@@ -1,17 +1,22 @@
 name: Python CI
 
+#when ever some one pushes the code to the github the action starts 
 on: [push]
 
+#the workflow has multiple jobs build , test ,deploy  etc 
 jobs:
   build:
     runs-on: ubuntu-latest
+    #the virtual machine that runs the code on 
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        #download your github repo to the virtual machine 
 
       - name: Set up Python 3.10.11
         uses: actions/setup-python@v5
+        #install python on the virtual machine 
         with:
           python-version: '3.10.11'
 
